@@ -14,10 +14,9 @@ Instructions for connecting MCP servers to Claude Desktop.
 {
   "mcpServers": {
     "github": {
-      "command": "npx",
-      "args": ["-y", "@modelcontextprotocol/server-github"],
-      "env": {
-        "GITHUB_PERSONAL_ACCESS_TOKEN": "your_token"
+      "httpUrl": "https://api.githubcopilot.com/mcp/",
+      "headers": {
+        "Authorization": "Bearer your_token_here"
       }
     }
   }

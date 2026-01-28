@@ -9,8 +9,10 @@ Instructions for connecting MCP servers to the Cursor code editor.
 3. Click **+ Add Server**.
 4. Enter the details:
    - **Name**: e.g., `GitHub`
-   - **Type**: `command`
-   - **Command**: `npx -y @modelcontextprotocol/server-github`
+   - **Type**: `SSE`
+   - **URL**: `https://api.githubcopilot.com/mcp/`
+   - **Headers**:
+     - `Authorization`: `Bearer your_token_here`
 5. Click **Save**.
 
 ## Using Servers in Chat

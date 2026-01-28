@@ -11,16 +11,13 @@ Instructions for connecting MCP servers to Gemini-based tools (e.g., Gemini Adva
 
 ### Via Local Settings
 If using a local environment that supports Gemini:
-- Update your `.gemini/settings.json` file to include the server configuration.
-
 ```json
 {
   "mcpServers": {
     "github": {
-      "command": "npx",
-      "args": ["-y", "@modelcontextprotocol/server-github"],
-      "env": {
-        "GITHUB_PERSONAL_ACCESS_TOKEN": "your_token"
+      "httpUrl": "https://api.githubcopilot.com/mcp/",
+      "headers": {
+        "Authorization": "Bearer your_token_here"
       }
     }
   }

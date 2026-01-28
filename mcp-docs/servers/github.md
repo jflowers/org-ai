@@ -4,16 +4,20 @@ This guide explains how to set up the GitHub MCP server and create the necessary
 
 ## Configuration
 
-To run the server:
-```bash
-export GITHUB_PERSONAL_ACCESS_TOKEN=your_token_here
-npx -y @modelcontextprotocol/server-github
+To configure the GitHub MCP server in your client settings (e.g., Gemini, Claude):
+
+```json
+"github": {
+  "httpUrl": "https://api.githubcopilot.com/mcp/",
+  "headers": {
+    "Authorization": "Bearer your_token_here"
+  }
+}
 ```
 
 ## Prerequisites
 
-1.  **Personal Access Token (PAT):** You must create a fine-grained token for the **complytime** organization as detailed below.
-2.  **Installation:** The GitHub MCP server is typically run via `npx`.
+1.  **Personal Access Token (PAT):** You must create a fine-grained token for the **complytime** organization as detailed below. This token will be used in your configuration headers.
 
 ---
 

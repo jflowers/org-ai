@@ -6,7 +6,7 @@ Instructions for connecting MCP servers to Claude Desktop.
 
 1. Locate your Claude Desktop configuration file:
    - **macOS**: `~/Library/Application\ Support/Claude/claude_desktop_config.json`
-   - **Windows**: `%APPDATA%\Claude\claude_desktop_config.json`
+   - **Linux**: Note that Claude Desktop usually requires a wrapper or specific setup on Linux (e.g., via Wine or an unofficial client), but the config structure remains the same.
 
 2. Add your server configuration to the `mcpServers` object:
 
@@ -18,6 +18,13 @@ Instructions for connecting MCP servers to Claude Desktop.
       "headers": {
         "Authorization": "Bearer your_token_here"
       }
+    },
+    "chrome-devtools": {
+      "command": "npx",
+      "args": [
+        "chrome-devtools-mcp@latest",
+        "--browser-url=http://127.0.0.1:9222"
+      ]
     }
   }
 }

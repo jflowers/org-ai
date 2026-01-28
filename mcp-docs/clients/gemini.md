@@ -19,6 +19,13 @@ If using a local environment that supports Gemini:
       "headers": {
         "Authorization": "Bearer your_token_here"
       }
+    },
+    "chrome-devtools": {
+      "command": "npx",
+      "args": [
+        "chrome-devtools-mcp@latest",
+        "--browser-url=http://127.0.0.1:9222"
+      ]
     }
   }
 }

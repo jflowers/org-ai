@@ -7,13 +7,19 @@ Instructions for connecting MCP servers to the Cursor code editor.
 1. Open Cursor **Settings** (`Cmd+,`).
 2. Navigate to **Features** > **MCP**.
 3. Click **+ Add Server**.
-4. Enter the details:
-   - **Name**: e.g., `GitHub`
+4. Enter the GitHub details:
+   - **Name**: `GitHub`
    - **Type**: `SSE`
    - **URL**: `https://api.githubcopilot.com/mcp/`
    - **Headers**:
      - `Authorization`: `Bearer your_token_here`
-5. Click **Save**.
+
+5. Click **+ Add Server** again for Chrome DevTools:
+   - **Name**: `Chrome DevTools`
+   - **Type**: `command`
+   - **Command**: `npx -y chrome-devtools-mcp@latest --browser-url=http://127.0.0.1:9222`
+
+6. Click **Save**.
 
 ## Using Servers in Chat
 Once added, you can @-mention the server or use its tools directly in the Cursor chat sidebar.

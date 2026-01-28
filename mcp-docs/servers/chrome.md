@@ -1,25 +1,40 @@
-# Chrome MCP Server
+# Chrome DevTools MCP Server
 
-Instructions for setting up the Chrome MCP server for browser interaction.
+Instructions for setting up the Chrome DevTools MCP server for browser interaction and debugging.
 
 ## Prerequisites
 
 1. **Chrome Browser**: Installed and running.
-2. **Remote Debugging**: Chrome must be started with remote debugging enabled.
+2. **Remote Debugging**: Chrome must be started with remote debugging enabled on port 9222.
 
-## Configuration
+### Starting Chrome with Remote Debugging
 
-### Windows
-```cmd
-"C:\Program Files\Google\Chrome\Application\chrome.exe" --remote-debugging-port=9222
-```
-
-### macOS
+#### macOS
 ```bash
 /Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome --remote-debugging-port=9222
 ```
 
-### Running the Server
+#### Linux (Fedora/CentOS-Stream/RHEL)
 ```bash
-npx -y @modelcontextprotocol/server-chrome
+google-chrome --remote-debugging-port=9222
 ```
+
+## Configuration
+
+To configure the Chrome DevTools MCP server in your client settings (e.g., Gemini, Claude):
+
+```json
+"chrome-devtools": {
+  "command": "npx",
+  "args": [
+    "chrome-devtools-mcp@latest",
+    "--browser-url=http://127.0.0.1:9222"
+  ]
+}
+```
+
+## Features
+- Inspect page content
+- Run JavaScript in the browser
+- Take screenshots
+- Navigate to URLs

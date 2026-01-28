@@ -2,6 +2,8 @@
 
 This directory contains documentation for configuring and using Model Context Protocol (MCP) servers with various AI clients.
 
+**Supported OS:** macOS and Linux (Fedora, CentOS Stream, RHEL). Windows is not supported.
+
 ## Structure
 
 - [Servers](./servers/): Configuration steps for specific MCP servers.

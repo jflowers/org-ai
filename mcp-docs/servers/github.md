@@ -1,8 +1,27 @@
-# GitHub Fine-Grained Personal Access Token Setup
+# GitHub MCP Server
 
-This guide describes the process for creating and getting approval for a fine-grained personal access token (PAT) for the **complytime** organization.
+This guide explains how to set up the GitHub MCP server and create the necessary authentication tokens.
 
-## Steps to Create a Fine-Grained Token
+## Configuration
+
+To run the server:
+```bash
+export GITHUB_PERSONAL_ACCESS_TOKEN=your_token_here
+npx -y @modelcontextprotocol/server-github
+```
+
+## Prerequisites
+
+1.  **Personal Access Token (PAT):** You must create a fine-grained token for the **complytime** organization as detailed below.
+2.  **Installation:** The GitHub MCP server is typically run via `npx`.
+
+---
+
+## Creating a Fine-Grained Token
+
+This section describes the process for creating and getting approval for a fine-grained personal access token (PAT) for the **complytime** organization.
+
+### Steps to Create
 
 1.  **Navigate to Developer Settings:**
     Go to your GitHub [Settings](https://github.com/settings/profile), then scroll down to the bottom of the left sidebar and click on **Developer settings**.
@@ -21,21 +40,22 @@ This guide describes the process for creating and getting approval for a fine-gr
 5.  **Select Resource Owner:**
     Under **Resource owner**, select **complytime** from the dropdown menu. This ensures the token is scoped to the organization.
 
-    ![Fine-grained Token Setup Process](./images/fine-grained-token.png)
+    ![Fine-grained Token Setup Process](../../images/fine-grained-token.png)
 
 6.  **Repository Access:**
     Choose whether the token should have access to **All repositories** within the organization or **Only select repositories**. For most use cases, selecting specific repositories is recommended for security.
 
-7.  **Set Permissions:**
-    Configure the necessary permissions for your token. Common permissions include:
-    -   **Contents:** Read and write (for pushing code).
-    -   **Metadata:** Read-only (mandatory).
-    -   **Pull requests:** Read and write.
+7.  **Set Permissions (Scopes):**
+    Configure the necessary permissions. For the MCP server, you typically need:
+    -   **Contents:** Read and write
+    -   **Metadata:** Read-only (mandatory)
+    -   **Pull requests:** Read and write
+    -   **Issues:** Read and write
 
 8.  **Generate Token:**
     Scroll to the bottom and click **Generate token**.
 
-## Approval Process
+### Approval Process
 
 Once you generate the token, if the **complytime** organization requires administrator approval for fine-grained PATs, the following will happen:
 
